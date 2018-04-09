@@ -51,6 +51,27 @@ public class UserServices {
        
         }   
 
+    public User selectUsersAllForLogin(String pseudo,String password)
+    { String req="Select * from user where username='" + pseudo + "' and mdp='"+ password +"'";
+      User u=new User();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+          u.setId(rs.getInt("id"));
+          u.setUsername(rs.getString("username"));
+          u.setPassword(rs.getString("mdp"));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return u;
+       
+        }   
+
     
     
      public List<User> selectUserById(List<Integer> lst)

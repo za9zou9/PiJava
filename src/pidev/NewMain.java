@@ -6,10 +6,12 @@
 package pidev;
 
 import Entities.Commande;
+import Entities.Commercant;
 import Entities.Partcipation;
 import Entities.Produit;
 import Entities.User;
 import Services.CommandeServices;
+import Services.CommercantServices;
 import Services.ParticipationService;
 import Services.ProduitServices;
 import Services.UserServices;
@@ -81,12 +83,15 @@ for (int i = 1; i < tableauEntier.length; i++) {
   
   
   */
-  
+  CommercantServices cs=new CommercantServices();
+  UserServices us=new UserServices();
+
+ Commercant monta=cs.selectCommercantForLogin("skan", "1111");
+ System.out.println(monta.getNom());
  
-  SMS msg=new SMS();
-    
-   msg.SendSMS("sikipon", "skanskan", "Ooh revenez vite a l'application vous avez eu un nouveau date", "21626186131", "https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
-  
+ User u=us.selectUsersAllForLogin("mondher", "mondher");
+ System.out.println(u.getId());
+ 
 }
     
     

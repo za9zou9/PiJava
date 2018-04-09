@@ -81,6 +81,8 @@ public class FXMLGererController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
        Recherche(listE,matable,rech);
+       
+       
    
   
    matable.setItems(listE);

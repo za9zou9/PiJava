@@ -74,6 +74,14 @@ public class User {
         this.etat=etat;
      
     }
+
+    public User(String username, String mdp,int id) {
+        this.id = id;
+        this.username = username;
+        this.mdp=mdp;
+    }
+    
+    
     
      public User(String email,String username,String pays,String ville,int age,String profession,String sexe) {
         
