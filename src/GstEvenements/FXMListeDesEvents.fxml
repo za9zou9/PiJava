@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="526.0" prefWidth="696.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="GstEvenements.FXMListeDesEventsController">
+   <children>
+      <ScrollPane fx:id="scrol" prefHeight="533.0" prefWidth="696.0">
+         <content>
+            <VBox fx:id="vb" prefHeight="523.0" prefWidth="697.0" />
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="601.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLConsulterController">
+   <children>
+      <Label fx:id="nom" layoutX="331.0" layoutY="28.0" prefHeight="30.0" prefWidth="169.0" text="Label" textFill="#28ab95">
+         <font>
+            <Font name="System Bold Italic" size="39.0" />
+         </font></Label>
+      <Label fx:id="type" layoutX="29.0" layoutY="129.0" prefHeight="17.0" prefWidth="131.0" text="Label" textFill="#1d5fbb">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="description" layoutX="28.0" layoutY="430.0" prefHeight="119.0" prefWidth="302.0" text="Label" textFill="#1d5fbb">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="quantite" layoutX="31.0" layoutY="265.0" text="Label" textFill="#1d5fbb">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="prix" layoutX="31.0" layoutY="337.0" text="Label" textFill="#1d5fbb">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label fx:id="region" layoutX="31.0" layoutY="192.0" text="Label" textFill="#1d5fbb">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <JFXButton fx:id="supp" layoutX="473.0" layoutY="530.0" onAction="#supprimer" text="Supprimer le produit" textFill="#f51212" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="mod" layoutX="473.0" layoutY="470.0" onAction="#modifier" text="Modifier le produit" textFill="#ee0909" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="imgview" fitHeight="328.0" fitWidth="430.0" layoutX="285.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIconView fx:id="retour" fill="#e18646" glyphName="CHEVRON_CIRCLE_LEFT" layoutX="45.0" layoutY="62.0" onMouseClicked="#retourner" size="40" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLStatistiquesController">
+   <children>
+      <TabPane layoutY="115.0" prefHeight="482.0" prefWidth="845.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Diagramme1">
+            <content>
+              <AnchorPane fx:id="ancho" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="chart" layoutX="151.0" layoutY="64.0" prefHeight="326.0" prefWidth="511.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label layoutX="129.0" layoutY="47.0" text="Nb Unités" textFill="#3b6504">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="628.0" layoutY="369.0" text="Nom du produit" textFill="#3b6504">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Diagramme 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BarChart fx:id="chart2" layoutX="151.0" layoutY="64.0" prefHeight="326.0" prefWidth="511.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <Label layoutX="116.0" layoutY="43.0" text="Gain en Dinars" textFill="#3b6504">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="632.0" layoutY="369.0" text="Nom du produit" textFill="#3b6504">
+                           <font>
+                              <Font name="System Italic" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <FontAwesomeIconView fx:id="retour" fill="#e18646" glyphName="CHEVRON_CIRCLE_LEFT" layoutX="25.0" layoutY="71.0" onMouseClicked="#retourner" size="40" />
+      <ImageView fitHeight="115.0" fitWidth="777.0" layoutX="69.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@9542i6E9DC0623B52B158.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="115.0" fitWidth="412.0" layoutX="452.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@9542i6E9DC0623B52B158.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

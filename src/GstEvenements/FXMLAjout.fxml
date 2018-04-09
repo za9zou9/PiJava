@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="533.0" prefWidth="1078.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstEvenements.FXMLAjoutController">
+    <stylesheets>
+        <URL value="@fxmlajout.css" />
+      <URL value="@fxmlajout.css" />
+    </stylesheets>
+   <children>
+      <Button fx:id="valider" layoutX="378.0" layoutY="455.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="34.0" prefWidth="336.0" text="Valider" />
+      <JFXTextField fx:id="lieu" focusColor="#89136d" layoutX="64.0" layoutY="225.0" prefHeight="25.0" prefWidth="235.0" promptText="lieu" />
+      <JFXDatePicker fx:id="date" layoutX="64.0" layoutY="158.0" prefHeight="25.0" prefWidth="235.0" promptText="date" />
+      <TextArea fx:id="description" layoutX="20.0" layoutY="285.0" prefHeight="126.0" prefWidth="694.0" promptText="description" />
+      <Button fx:id="image" layoutX="846.0" layoutY="411.0" mnemonicParsing="false" onAction="#choisir" prefHeight="25.0" prefWidth="98.0" text="Choisir Image" />
+      <ImageView fx:id="imgView" fitHeight="211.0" fitWidth="293.0" layoutX="749.0" layoutY="171.0" pickOnBounds="true" preserveRatio="true" />
+      <FontAwesomeIconView fx:id="retour" fill="#e18646" glyphName="CHEVRON_CIRCLE_LEFT" layoutX="47.0" layoutY="69.0" onMouseClicked="#retourner" size="40" />
+      <Label layoutX="437.0" layoutY="36.0" text="Ajout Evénement" textFill="#1e8677">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
