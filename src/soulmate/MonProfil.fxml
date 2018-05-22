@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soulmate.MonProfilController">
+   <children>
+      <ImageView fitHeight="684.0" fitWidth="1015.0" layoutX="-5.0" layoutY="-5.0">
+         <image>
+            <Image url="@../images/wide-scene-wedding-background-21267527.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="scrol" layoutX="-5.0" layoutY="219.0" prefHeight="460.0" prefWidth="1000.0">
+         <content>
+            <VBox fx:id="amis" prefWidth="993.0">
+               <padding>
+                  <Insets left="310.0" />
+               </padding></VBox>
+         </content>
+      </ScrollPane>
+      <HBox alignment="CENTER_LEFT" layoutX="-4.0" layoutY="-3.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1007.0" styleClass="menu_bar" stylesheets="@../FxInterfaces/acceuil.css">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+         <children>
+            <Label fx:id="acceuil" onMouseClicked="#retour" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Acceuil" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="services" ellipsisString="" onMouseClicked="#Menu" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Mes amis" textFill="#4f86dd">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="veterinaires" onMouseClicked="#Menu" prefHeight="49.0" prefWidth="182.0" styleClass="menu_item" text="Success Stories" textFill="#837f7f">
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="evenements" onMouseClicked="#Menu" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Evenements" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="evenements1" onMouseClicked="#planif" prefHeight="49.0" prefWidth="214.0" styleClass="menu_item" text="Planifier votre mariage" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets left="560.0" />
+   </padding>
+</AnchorPane>

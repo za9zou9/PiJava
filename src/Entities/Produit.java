@@ -29,14 +29,71 @@ public class Produit  {
   
     private String image;
   
-    private boolean confirmation;
+    private int confirmation;
    
     private int idCommercant;
 
     public Produit() {
     }
+    
+     public Produit(String nom) {
+        this.nom = nom;
+    }
 
-    public Produit(Integer idProduit, Integer prix, String type, Integer quantite, String nom, String description,int idCommercant ,String region, String image, boolean confirmation) {
+    public Produit(Integer quantite) {
+        this.quantite = quantite;
+    }
+
+    public Produit(String image ,String nom,Integer prix, String description,Integer quantite) {
+        this.prix = prix;
+        this.quantite = quantite;
+        this.nom = nom;
+        this.description = description;
+        this.image = image;
+    }
+
+    public Produit(Integer idProduit,String image, String nom,int prix,String description,int quantite,int confirmation) {
+        this.idProduit = idProduit;
+        this.prix = prix;
+        this.type = type;
+        this.quantite = quantite;
+        this.nom = nom;
+        this.description = description;
+        this.idCommercant = idCommercant;
+        this.region = region;
+        this.image = image;
+        this.confirmation=confirmation;
+    }
+    
+        public Produit(String nom,int prix) {
+            this.nom=nom;
+        this.prix = prix;
+
+    }
+        
+        public Produit(String nom,int id,String i) {
+            this.nom=nom;
+        this.idProduit = id;
+this.image = i ;
+    }
+
+    public Produit(Integer idProduit, Integer prix) {
+        this.idProduit = idProduit;
+        this.prix = prix;
+    }
+
+    public Produit(String nom,Integer prix, String description,Integer quantite,String image) {
+        this.image = image;
+        this.nom = nom;
+        this.prix = prix;
+   this.description = description;
+          this.quantite = quantite;
+       
+    }
+    
+    
+
+    public Produit(Integer idProduit, Integer prix, String type, Integer quantite, String nom, String description,int idCommercant ,String region, String image, int confirmation) {
         this.idProduit = idProduit;
         this.prix = prix;
         this.type = type;
@@ -50,11 +107,9 @@ public class Produit  {
     }
 
     
-    public Produit(Integer idProduit) {
-        this.idProduit = idProduit;
-    }
+   
 
-    public Produit(Integer idProduit, boolean confirmation) {
+    public Produit(Integer idProduit, int confirmation) {
         this.idProduit = idProduit;
         this.confirmation = confirmation;
     }
@@ -123,11 +178,11 @@ public class Produit  {
         this.image = image;
     }
 
-    public boolean getConfirmation() {
+    public int getConfirmation() {
         return confirmation;
     }
 
-    public void setConfirmation(boolean confirmation) {
+    public void setConfirmation(int confirmation) {
         this.confirmation = confirmation;
     }
 
@@ -159,9 +214,9 @@ public class Produit  {
         return true;
     }
 
-    @Override
+     @Override
     public String toString() {
-        return "Entities.Produit[ idProduit=" + idProduit + " , id du commercant = "+idCommercant+"]";
+        return "" +nom+ " ";
     }
-    
+
 }

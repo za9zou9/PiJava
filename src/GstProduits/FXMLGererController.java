@@ -5,9 +5,12 @@
  */
 package GstProduits;
 
+import Entities.Commercant;
 import Entities.Evenement;
 import Entities.Partcipation;
 import Entities.Produit;
+import Entities.User;
+import static EventsUsers.FXMLDetailsEventController.id;
 import GstEvenements.DeleteButton;
 import Services.ParticipationService;
 import Services.ProduitServices;
@@ -59,9 +62,7 @@ public class FXMLGererController implements Initializable {
     private TableColumn<Produit, String> nom;
 
     ProduitServices se=new ProduitServices();
-  List<Produit> liste=(ArrayList<Produit>) se.selectProduitsConfirmes(1);
- 
-    private ObservableList<Produit> listE=FXCollections.observableArrayList(liste);
+  
     @FXML
     private TableColumn<Produit, String> type;
     @FXML
@@ -75,30 +76,48 @@ public class FXMLGererController implements Initializable {
     @FXML
     private TableColumn<Produit, String> type2;
     
-    List<Produit> liste2=(ArrayList<Produit>) se.selectProduitsEnAttente(1);
- 
-    private ObservableList<Produit> listE2=FXCollections.observableArrayList(liste2);
+    
+    
+    
+    
     @FXML
     private JFXTextField rech2;
     @FXML
     private FontAwesomeIconView ajout;
+    @FXML
+    private FontAwesomeIconView decon;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        Recherche(listE,matable,rech);
+       
+        Commercant commm=Commercant.getInstance();
+        
+        List<Produit> liste2=(ArrayList<Produit>) se.selectProduitsEnAttente(commm.getIdCommercant());
+ 
+     ObservableList<Produit> listE2=FXCollections.observableArrayList(liste2);
+          
+        List<Produit> liste=(ArrayList<Produit>) se.selectProduitsConfirmes(commm.getIdCommercant());
+ 
+     ObservableList<Produit> listE=FXCollections.observableArrayList(liste);
+            Recherche(listE,matable,rech);
         Recherche2(listE,matable,rech2);
         
         matable.setItems(listE);
+         matable2.setItems(listE2);
+        
+        
+        
+        
    nom.setCellValueFactory(
                 new PropertyValueFactory<Produit, String>("nom"));
    
     type.setCellValueFactory(
                 new PropertyValueFactory<Produit, String>("type"));
     
-     matable2.setItems(listE2);
+    
    nom2.setCellValueFactory(
                 new PropertyValueFactory<Produit, String>("nom"));
    
@@ -125,7 +144,7 @@ public class FXMLGererController implements Initializable {
     
     
     
-    
+   
     
     
     }    
@@ -202,6 +221,20 @@ public class FXMLGererController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(GstProduits.FXMLAjoutController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void deconnexion(MouseEvent event) throws IOException {
+     Commercant commm=Commercant.getInstance();
+        commm.sedeconnecter();
+        Stage stage = (Stage) decon.getScene().getWindow();
+            stage.close();
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("/GstUtilisateurs/FXMLogin.fxml"));
+                    
+              Scene scene = new Scene(parentContent); 
+              stage.setScene(scene);
+              stage.sizeToScene();
+              stage.show();
     }
     
 

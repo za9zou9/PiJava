@@ -26,6 +26,23 @@ public class Commande {
 
     public Commande() {
     }
+    
+     public Commande(int quantite,int idProduit) {
+        this.quantite = quantite;
+        this.idProduit=idProduit;
+    }
+
+    public Commande(int idProduit) {
+        this.idProduit = idProduit;
+    }
+    
+        
+
+    public Commande(int idCommande, int quantite, int idProduit) {
+        this.idCommande = idCommande;
+        this.quantite = quantite;
+        this.idProduit = idProduit;
+    }
 
     public Commande(int idCommande, int quantite, int idPack, int idProduit, int id) {
         this.idCommande = idCommande;

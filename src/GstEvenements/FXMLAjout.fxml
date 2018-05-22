@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="533.0" prefWidth="1078.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstEvenements.FXMLAjoutController">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="533.0" prefWidth="1078.0" style="-fx-background-color: #7b94ab;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstEvenements.FXMLAjoutController">
     <stylesheets>
         <URL value="@fxmlajout.css" />
       <URL value="@fxmlajout.css" />
@@ -29,5 +29,6 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
+      <FontAwesomeIconView fx:id="home" fill="#b91515" glyphName="HOME" layoutX="994.0" layoutY="499.0" onMouseClicked="#homer" size="60" />
    </children>
 </AnchorPane>

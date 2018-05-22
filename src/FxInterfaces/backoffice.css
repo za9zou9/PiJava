@@ -1,0 +1,19 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+.menu_item{
+    -fx-font-weight:bold;
+    -fx-font-size:18;
+}
+
+.menu_item:hover{
+    -fx-font-weight:bold;
+    -fx-text-fill: white;
+    -fx-background-color: #4f86dd;
+}
+
+
+}

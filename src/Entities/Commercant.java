@@ -32,9 +32,32 @@ public class Commercant implements Serializable  {
 
     public Commercant() {
     }
+    
+     public Commercant(Commercant com) {
+   this.idCommercant=com.idCommercant;
+     }
 
     public Commercant(Integer idCommercant) {
         this.idCommercant = idCommercant;
+    }
+    
+     private static Commercant instance;
+  
+    public static Commercant getInstance(){
+        if (instance == null)
+            instance = new Commercant();
+        
+    return instance;
+    }
+
+  
+    
+    public static void setInstance(Commercant user){
+    instance = new Commercant(user);
+    }
+    
+    public  void sedeconnecter(){
+    instance=null;
     }
 
     public Commercant(String pseudo, String nom, String prenom, String mdp) {

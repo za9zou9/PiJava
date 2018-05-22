@@ -81,6 +81,8 @@ private String url;
     private FontAwesomeIconView retour;
     private TextField lon;
     private TextField lat;
+    @FXML
+    private FontAwesomeIconView home;
 
     /**
      * Initializes the controller class.
@@ -247,6 +249,18 @@ private String url;
         } catch (IOException ex) {
             Logger.getLogger(GstEvenements.FXMLGererController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void homer(MouseEvent event) throws IOException {
+         Stage stage = (Stage) home.getScene().getWindow();
+            stage.close();
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("/FxInterfaces/backoffice.fxml"));
+                    
+              Scene scene = new Scene(parentContent); 
+              stage.setScene(scene);
+              stage.sizeToScene();
+              stage.show();
     }
     
     

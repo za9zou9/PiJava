@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1360.0" stylesheets="@backoffice.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BackofficeController">
+   <children>
+     
+        
+            <Label prefHeight="23.0" prefWidth="228.0" style="-fx-font-size: 20; -fx-text-fill: #7387A8; -fx-font-weight: bold;" text="My Soulmate" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Label>
+        
+      <VBox layoutY="40.0" prefHeight="720.0" prefWidth="206.0" style="-fx-background-color: #2A3F54;">
+         <children>
+            <Label fx:id="acceuil" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Acceuil" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="produits" prefHeight="43.0" prefWidth="120.0" text="Produits" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherProduits" onMouseClicked="#affichProdA" prefHeight="49.0" prefWidth="182.0" styleClass="menu_item" text="Afficher Produits" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ajouterProduits" onMouseClicked="#ajoutProd" prefHeight="49.0" prefWidth="177.0" styleClass="menu_item" text="Ajouter Produits" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="confirmerProduit" onMouseClicked="#confirm" prefHeight="49.0" prefWidth="196.0" styleClass="menu_item" text="Confirmer Produits" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="packs" prefHeight="43.0" prefWidth="120.0" text="Packs" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherPacks" onMouseClicked="#afficherPacks" prefHeight="49.0" prefWidth="182.0" styleClass="menu_item" text="Afficher Packs" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ajouterPacks" onMouseClicked="#ajouterPacks" prefHeight="49.0" prefWidth="177.0" styleClass="menu_item" text="Ajouter Packs" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="acceuil111" prefHeight="54.0" prefWidth="175.0" text="Evenements" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherEvenements" onMouseClicked="#afficherevenements" prefHeight="49.0" prefWidth="207.0" styleClass="menu_item" text="Afficher Evenements" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="AjouterEvenements" onMouseClicked="#ajouterevenements" prefHeight="49.0" prefWidth="206.0" styleClass="menu_item" text="Ajouter Evenements" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="holderPane" layoutX="140.0" layoutY="42.0" prefHeight="713.0" prefWidth="1219.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1156.0" layoutX="62.0">
+               <image>
+                  <Image url="@../images/93d4bdf7721fdddc83510d3d7aef01a9.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="62.0" prefHeight="302.0" prefWidth="330.0">
+               <children>
+                  <Label layoutX="105.0" layoutY="252.0" prefHeight="17.0" prefWidth="120.0" text="Produits" textFill="#eeecec">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="30.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="227.0" fitWidth="317.0" layoutX="7.0" layoutY="14.0">
+                     <image>
+                        <Image url="@../images/alessi-bridal-registry-service.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="40.0" layoutY="252.0">
+                     <image>
+                        <Image url="@../images/eye-2387853_960_720.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="238.0" layoutY="258.0">
+                     <image>
+                        <Image url="@../images/add-circle-1_48180.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="62.0" layoutY="332.0" prefHeight="342.0" prefWidth="330.0">
+               <children>
+                  <Label layoutX="122.0" layoutY="279.0" prefHeight="49.0" prefWidth="106.0" text="Packs" textFill="#f8f8f8">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="199.0" fitWidth="293.0" layoutX="14.0" layoutY="43.0">
+                     <image>
+                        <Image url="@../images/Ali-wedding-paper-products.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="41.0" layoutY="286.0">
+                     <image>
+                        <Image url="@../images/eye-2387853_960_720.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="242.0" layoutY="289.0">
+                     <image>
+                        <Image url="@../images/add-circle-1_48180.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="555.0" layoutY="151.0" prefHeight="330.0" prefWidth="427.0">
+               <children>
+                  <Label layoutX="161.0" layoutY="292.0" text="Evenements" textFill="#ebe2e2">
+                     <font>
+                        <Font name="Franklin Gothic Medium" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="249.0" fitWidth="346.0" layoutX="24.0" layoutY="25.0">
+                     <image>
+                        <Image url="@../images/321951-soiree-karaoke-geant-by-meetic-2.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="41.0" layoutX="78.0" layoutY="286.0">
+                     <image>
+                        <Image url="@../images/eye-2387853_960_720.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="326.0" layoutY="289.0">
+                     <image>
+                        <Image url="@../images/add-circle-1_48180.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children></AnchorPane>
+      <FontAwesomeIconView fx:id="decon" glyphName="SIGN_OUT" layoutX="209.0" layoutY="43.0" onMouseClicked="#deconnexion" size="40" />
+   </children>
+</AnchorPane>

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="533.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstEvenements.FXMLGererController">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="533.0" prefWidth="1078.0" style="-fx-background-color: #7b94ab;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstEvenements.FXMLGererController">
    <children>
       <TableView fx:id="matable" layoutX="9.0" layoutY="96.0" prefHeight="272.0" prefWidth="1047.0">
         <columns>
@@ -20,9 +20,9 @@
             <TableColumn fx:id="participants" prefWidth="116.0" text="Participants" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="rech" layoutX="32.0" layoutY="388.0" prefHeight="25.0" prefWidth="191.0" promptText="Chercher dans la description" />
-      <FontAwesomeIconView fx:id="plus" glyphName="PLUS_CIRCLE" layoutX="927.0" layoutY="454.0" onMouseClicked="#nouveau" size="70" />
-      <Label layoutX="921.0" layoutY="473.0" text="Nouveau">
+      <JFXTextField fx:id="rech" layoutX="34.0" layoutY="405.0" prefHeight="25.0" prefWidth="191.0" promptText="Chercher dans la description" />
+      <FontAwesomeIconView fx:id="plus" glyphName="PLUS_CIRCLE" layoutX="779.0" layoutY="454.0" onMouseClicked="#nouveau" size="70" />
+      <Label layoutX="773.0" layoutY="472.0" text="Nouveau">
          <font>
             <Font size="18.0" />
          </font>
@@ -32,5 +32,6 @@
             <Font name="System Bold" size="27.0" />
          </font>
       </Label>
+      <FontAwesomeIconView fx:id="home" fill="#b91515" glyphName="HOME" layoutX="993.0" layoutY="492.0" onMouseClicked="#homer" size="60" />
    </children>
 </AnchorPane>

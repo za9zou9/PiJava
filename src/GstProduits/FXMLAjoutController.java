@@ -5,6 +5,7 @@
  */
 package GstProduits;
 
+import Entities.Commercant;
 import Entities.Produit;
 import Services.ProduitServices;
 import com.jfoenix.controls.JFXTextField;
@@ -97,7 +98,7 @@ private String url;
     private void ajouter(ActionEvent event) throws SQLException {
         Produit p= new Produit();
         ProduitServices ps=new ProduitServices();
-        
+        Commercant commm=Commercant.getInstance();
          if ((description.getText().equals(""))||(nom.getText().equals(""))||(url==null)||(quantite.getText().equals(""))||(prix.getText().equals(""))||(type.getText().equals(""))||(region.getText().equals("")))
     {Alert a = new Alert(Alert.AlertType.ERROR);
                 a.setTitle("Erreur");
@@ -106,13 +107,14 @@ private String url;
  a.showAndWait();}
          
          else{
-        p.setConfirmation(false);
+        p.setConfirmation(0);
         p.setDescription(description.getText());
         p.setImage(url);
         p.setNom(nom.getText());
         p.setRegion(region.getText());
         p.setType(type.getText());
-       p.setIdCommercant(1);
+       p.setIdCommercant(commm.getIdCommercant());
+       System.out.println(commm.getIdCommercant());
        try
 {
      int var = Integer.parseInt(quantite.getText());
@@ -125,6 +127,18 @@ private String url;
                 a1.setHeaderText(null);
                 a1.setContentText("Produit créé avec succès");
  a1.showAndWait();
+ 
+  FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGerer.fxml"));
+        try {
+            Parent root;
+            root = loader.load();
+            GstProduits.FXMLGererController interf = loader.getController();
+            Scene scene =ancho.getScene();
+            scene.setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(GstProduits.FXMLGererController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+ 
 }catch(NumberFormatException  e)
 {Alert a2 = new Alert(Alert.AlertType.ERROR);
                 a2.setTitle("Erreur");

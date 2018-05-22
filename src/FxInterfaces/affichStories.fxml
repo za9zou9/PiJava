@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="600.0" prefWidth="1000.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AffichStoriesController">
+    <stylesheets>
+        <URL value="@affichstories.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="545.0" fitWidth="1007.0" layoutX="-4.0" layoutY="60.0">
+         <image>
+            <Image url="@../images/01.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="titre" layoutX="337.0" layoutY="81.0" prefHeight="22.0" prefWidth="120.0" text="Label">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img" fitHeight="189.0" fitWidth="368.0" layoutX="208.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="matable" layoutX="136.0" layoutY="332.0" onMouseClicked="#onSelectLigne" prefHeight="260.0" prefWidth="387.0">
+        <columns>
+          <TableColumn fx:id="personne" minWidth="0.0" prefWidth="0.0" text="Utilisateur" />
+          <TableColumn fx:id="desc" prefWidth="386.0" text="Le commentaire" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" layoutX="-1.0" layoutY="1.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="1000.0" styleClass="menu_bar" stylesheets="@acceuil.css">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" width="10.0" />
+         </effect>
+         <children>
+            <Label fx:id="acceuil" onMouseClicked="#retour" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Acceuil" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="35.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="services" onMouseClicked="#Menu" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Mes amis" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="veterinaires" onMouseClicked="#Menu" prefHeight="49.0" prefWidth="148.0" styleClass="menu_item" text="Success Stories" textFill="#4f86dd">
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="evenements" onMouseClicked="#Menu" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Evenements" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="evenements1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#planif" prefHeight="49.0" prefWidth="214.0" styleClass="menu_item" text="Planifier votre mariage" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="8.0" top="11.0" />
+               </padding>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="description" layoutX="357.0" layoutY="289.0" prefHeight="49.0" prefWidth="240.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="236.0" layoutY="78.0" prefHeight="30.0" prefWidth="60.0" text="Titre" textFill="#4f86dd">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="231.0" layoutY="299.0" text="Description" textFill="#4f86dd">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="comment" layoutX="537.0" layoutY="392.0" text="Commentaire" textFill="#2b1cb5">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <TextField fx:id="commentaire" layoutX="698.0" layoutY="394.0" />
+      <Button layoutX="700.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#AjouterCom" prefHeight="32.0" prefWidth="149.0" text="AjouterCom" />
+      <TextField fx:id="coms" layoutX="698.0" layoutY="326.0" />
+      <Button layoutX="702.0" layoutY="497.0" mnemonicParsing="false" onMouseClicked="#modif" prefHeight="32.0" prefWidth="148.0" text="ModifierCom" />
+      <Button layoutX="704.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#supprim" prefHeight="25.0" prefWidth="148.0" text="SupprimerCom" />
+   </children>
+</AnchorPane>

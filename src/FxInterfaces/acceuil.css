@@ -1,0 +1,49 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+.parent{
+     -fx-background-image:url("../images/shining-heart-shapes-loopable-love-background_vywvxljzl__F0000.png");
+}
+.header{
+    -fx-background-color: #123;
+}
+#headerBtns:hover{
+    -fx-opacity: 0.75;
+}
+#headerBtns{
+    -fx-opacity: 1;
+}
+
+
+
+#main-menu-label{
+        -fx-font-size:25;
+        -fx-font-weight:bold;
+        -fx-text-fill: white;
+}
+
+
+.menu_bar{
+    -fx-background-color: white;
+    -fx-background-image:url("../images/wedding_love_vector_background_148851.jpg");
+}
+
+.main
+{
+        -fx-background-color: #123;
+         -fx-background-image:url("../images/cool-heart-background-17780-18239-hd-wallpapers.jpg");
+}
+
+.menu_item{
+    -fx-font-weight:bold;
+    -fx-font-size:18;
+}
+
+.menu_item:hover{
+    -fx-font-weight:bold;
+    -fx-text-fill: white;
+    -fx-background-color: #4f86dd;
+}
+}

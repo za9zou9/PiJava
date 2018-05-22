@@ -85,9 +85,9 @@ public class FXMLConsulterController implements Initializable {
     @FXML
     private Label region;
     @FXML
-    private JFXButton supp;
+    private FontAwesomeIconView supp;
     @FXML
-    private JFXButton mod;
+    private FontAwesomeIconView mod;
 
     ProduitServices ps=new ProduitServices();
     
@@ -153,56 +153,7 @@ public class FXMLConsulterController implements Initializable {
        
     }    
 
-    @FXML
-    private void supprimer(ActionEvent event) throws SQLException, IOException {
-     
-         Alert a1 = new Alert(Alert.AlertType.CONFIRMATION);
-                a1.setTitle("Suppression");
-                a1.setHeaderText(null);
-                a1.setContentText("Etes vous vraiment sûr de vouloir supprimer ce produit");
-  Optional<ButtonType> button = a1.showAndWait();
-  if (button.get() == ButtonType.OK) {
-                         
-        ps.DeleteProduit(LeId);
-       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGerer.fxml"));
-        try {
-            Parent root;
-            root = loader.load();
-            GstProduits.FXMLGererController interf = loader.getController();
-            Scene scene =ancho.getScene();
-            scene.setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(GstProduits.FXMLGererController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                    }
-     
-                  
-                  
-    }
 
-    @FXML
-    private void modifier(ActionEvent event) throws IOException {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLModifier.fxml"));
-        try {
-            Parent root;
-            root = loader.load();
-            GstProduits.FXMLModifierController interf = loader.getController();
-            interf.setDescription(description.getText());
-            interf.setLeId(LeId);
-            interf.setNom(nom.getText());
-            interf.setPrix(Integer.parseInt(prix.getText()));
-            interf.setQuantite(Integer.parseInt(quantite.getText()));
-            interf.setRegion(region.getText());
-            interf.setType(type.getText());
-            interf.setImgview(url);
-            
-            
-            Scene scene =ancho.getScene();
-            scene.setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(GstProduits.FXMLModifierController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
     
     
    
@@ -230,6 +181,55 @@ public class FXMLConsulterController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(GstProduits.FXMLGererController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void modifier(MouseEvent event) {
+     FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLModifier.fxml"));
+        try {
+            Parent root;
+            root = loader.load();
+            GstProduits.FXMLModifierController interf = loader.getController();
+            interf.setDescription(description.getText());
+            interf.setLeId(LeId);
+            interf.setNom(nom.getText());
+            interf.setPrix(Integer.parseInt(prix.getText()));
+            interf.setQuantite(Integer.parseInt(quantite.getText()));
+            interf.setRegion(region.getText());
+            interf.setType(type.getText());
+            interf.setImgview(url);
+            interf.setUrl(url);
+            
+            Scene scene =ancho.getScene();
+            scene.setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(GstProduits.FXMLModifierController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void supprimer(MouseEvent event) throws SQLException {
+         Alert a1 = new Alert(Alert.AlertType.CONFIRMATION);
+                a1.setTitle("Suppression");
+                a1.setHeaderText(null);
+                a1.setContentText("Etes vous vraiment sûr de vouloir supprimer ce produit");
+  Optional<ButtonType> button = a1.showAndWait();
+  if (button.get() == ButtonType.OK) {
+                         
+        ps.DeleteProduit(LeId);
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLGerer.fxml"));
+        try {
+            Parent root;
+            root = loader.load();
+            GstProduits.FXMLGererController interf = loader.getController();
+            Scene scene =ancho.getScene();
+            scene.setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(GstProduits.FXMLGererController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                    }
+     
+                  
     }
     
   

@@ -4,11 +4,13 @@
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="611.0" prefWidth="745.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLAjoutController">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="611.0" prefWidth="745.0" style="-fx-background-color: #7b94ab;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLAjoutController">
     <stylesheets>
         <URL value="@fxmlajout.css" />
     </stylesheets>
@@ -19,9 +21,14 @@
       <JFXTextField fx:id="type" layoutX="29.0" layoutY="338.0" promptText="type" />
       <JFXTextField fx:id="quantite" layoutX="29.0" layoutY="390.0" promptText="quantité" />
       <JFXTextField fx:id="prix" layoutX="29.0" layoutY="445.0" promptText="prix" />
-      <Button fx:id="choix" layoutX="546.0" layoutY="384.0" mnemonicParsing="false" onAction="#choisir" text="Choisir Image" />
-      <ImageView fx:id="image" fitHeight="150.0" fitWidth="200.0" layoutX="490.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="choix" layoutX="525.0" layoutY="390.0" mnemonicParsing="false" onAction="#choisir" text="Choisir Image" />
+      <ImageView fx:id="image" fitHeight="209.0" fitWidth="291.0" layoutX="414.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="valider" layoutX="249.0" layoutY="526.0" mnemonicParsing="false" onAction="#ajouter" prefHeight="34.0" prefWidth="248.0" text="Valider" />
       <FontAwesomeIconView fx:id="retour" fill="#e18646" glyphName="CHEVRON_CIRCLE_LEFT" layoutX="46.0" layoutY="64.0" onMouseClicked="#retourner" size="40" />
+      <Label layoutX="286.0" layoutY="31.0" text="Ajout produit" textFill="#1e8677">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

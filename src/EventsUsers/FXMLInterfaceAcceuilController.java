@@ -6,6 +6,7 @@
 package EventsUsers;
 
 import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +18,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -32,6 +36,8 @@ public class FXMLInterfaceAcceuilController implements Initializable {
     private JFXButton prochain;
     @FXML
     private JFXButton prec;
+    @FXML
+    private FontAwesomeIconView home;
 
     /**
      * Initializes the controller class.
@@ -69,6 +75,18 @@ public class FXMLInterfaceAcceuilController implements Initializable {
             Logger.getLogger(FXMListeEventsPastController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+
+    @FXML
+    private void homer(MouseEvent event) throws IOException {
+        Stage stage = (Stage) home.getScene().getWindow();
+            stage.close();
+        VBox parentContent= FXMLLoader.load(getClass().getResource("/FxInterfaces/Acceuil.fxml"));
+                    
+              Scene scene = new Scene(parentContent); 
+              stage.setScene(scene);
+              stage.sizeToScene();
+              stage.show();
     }
     
 }

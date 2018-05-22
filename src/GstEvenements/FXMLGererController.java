@@ -74,6 +74,8 @@ public class FXMLGererController implements Initializable {
     private AnchorPane ancho;
     @FXML
     private FontAwesomeIconView plus;
+    @FXML
+    private FontAwesomeIconView home;
     /**
      * Initializes the controller class.
      */
@@ -184,6 +186,18 @@ public class FXMLGererController implements Initializable {
             Logger.getLogger(FXMLAjoutController.class.getName()).log(Level.SEVERE, null, ex);
         }
          }
+
+    @FXML
+    private void homer(MouseEvent event) throws IOException {
+        Stage stage = (Stage) home.getScene().getWindow();
+            stage.close();
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("/FxInterfaces/backoffice.fxml"));
+                    
+              Scene scene = new Scene(parentContent); 
+              stage.setScene(scene);
+              stage.sizeToScene();
+              stage.show();
+    }
     
 
 

@@ -6,6 +6,7 @@
 package Services;
 
 import Database.dataSource;
+import Entities.Commande;
 import Entities.Commercant;
 import Entities.Produit;
 import java.sql.Connection;
@@ -45,7 +46,7 @@ public class ProduitServices {
         ste.setInt(3,p.getQuantite());
         ste.setString(4,p.getNom());
         ste.setString(5,p.getDescription());
-         ste.setBoolean(6,p.getConfirmation());
+         ste.setInt(6,p.getConfirmation());
          ste.setString(7,p.getRegion());
           ste.setString(8,p.getImage());
           ste.setInt(9,p.getIdCommercant());
@@ -74,7 +75,7 @@ public class ProduitServices {
             rs=st.executeQuery(req);
             while(rs.next())
             {
-            Produit g=new Produit(rs.getInt("idProduit"),rs.getInt("prix"),rs.getString("type"),rs.getInt("quantite"),rs.getString("nom"),rs.getString("description"),rs.getInt("idCommercant"),rs.getString("region"),rs.getString("image"),rs.getBoolean("confirmation"));
+            Produit g=new Produit(rs.getInt("idProduit"),rs.getInt("prix"),rs.getString("type"),rs.getInt("quantite"),rs.getString("nom"),rs.getString("description"),rs.getInt("idCommercant"),rs.getString("region"),rs.getString("image"),rs.getInt("confirmation"));
             list.add(g);
             }
             
@@ -96,7 +97,7 @@ public class ProduitServices {
             ResultSet resultat = statement.executeQuery(req);
             while(resultat.next())
             {
-            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getBoolean("confirmation"));
+            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getInt("confirmation"));
             list.add(g);
             }
             
@@ -118,7 +119,7 @@ public class ProduitServices {
             ResultSet resultat = statement.executeQuery(req);
             while(resultat.next())
             {
-            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getBoolean("confirmation"));
+            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getInt("confirmation"));
             list.add(g);
             }
             
@@ -185,7 +186,7 @@ public class ProduitServices {
             ResultSet resultat = statement.executeQuery(req);
             while(resultat.next())
             {
-            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getBoolean("confirmation"));
+            Produit g=new Produit(resultat.getInt("idProduit"),resultat.getInt("prix"),resultat.getString("type"),resultat.getInt("quantite"),resultat.getString("nom"),resultat.getString("description"),resultat.getInt("idCommercant"),resultat.getString("region"),resultat.getString("image"),resultat.getInt("confirmation"));
             list.add(g);
             }
             
@@ -198,4 +199,154 @@ public class ProduitServices {
         }   
   
  
+    public List<Produit> selectPrix()
+    { String req="produit.prix from commande inner join produit where (commande.idProduit=produit.idProduit)";
+      List list = new ArrayList<>();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+           
+           Produit p = new Produit(rs.getInt("prix"));
+           list.add(p);
+           
+            }
+            
+        } catch (SQLException ex) {
+           Logger.getLogger(dataSource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;
+       
+        }
+     
+     public List<Commande> selectCommandeP()
+    { String req="Select idProduit,quantite from commande ";
+      List list = new ArrayList<>();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+           Commande c=new Commande(rs.getInt("quantite"),rs.getInt("idProduit"));
+            list.add(c);
+            }
+            
+        } catch (SQLException ex) {
+           Logger.getLogger(dataSource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;
+       
+        }
+     
+      public List<Produit> select()
+    { String req="Select prix from produit ";
+      List list = new ArrayList<>();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+           Produit p=new Produit(rs.getInt("prix"));
+            list.add(p);
+            }
+            
+            
+        } catch (SQLException ex) {
+           Logger.getLogger(dataSource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;
+       
+        }
+     
+    public List<Produit> selectProduitsAll2()
+    { String req="Select * from produit";
+      List<Produit> list = new ArrayList<>();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+           Produit c=new Produit(rs.getInt("idProduit"),rs.getString("image"),rs.getString("nom"),rs.getInt("prix"),rs.getString("description"),rs.getInt("quantite"),rs.getInt("confirmation"));
+            if(c.getConfirmation()==1 && c.getQuantite()>0){
+            list.add(c);}
+            }
+            
+        } catch (SQLException ex) {
+           Logger.getLogger(dataSource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;
+       
+        } 
+    
+public List<Produit> selectProduit()
+    { String req="Select * from produit";
+      List<Produit> list = new ArrayList<>();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+           Produit c=new Produit(rs.getInt("idProduit"),rs.getString("image"),rs.getString("nom"),rs.getInt("prix"),rs.getString("description"),rs.getInt("quantite"),rs.getInt("confirmation"));
+            if(c.getConfirmation()==0){
+            list.add(c);}
+            }
+            
+        } catch (SQLException ex) {
+           Logger.getLogger(dataSource.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return list;
+       
+        } 
+
+    public void AjouterProduit(Produit p){
+  
+      try {
+          String req = "INSERT INTO Produit (nom,prix,description,quantite,image,confirmation) VALUES (?,?,?,?,?,1)";
+          PreparedStatement pre = con.prepareStatement(req);
+          pre.setString(1, p.getNom());
+          pre.setDouble(2, p.getPrix());
+         
+          pre.setString(3, p.getDescription());
+          pre.setInt(4, p.getQuantite());
+          pre.setString(5, p.getImage());
+         
+          
+          pre.executeUpdate();
+          
+      } catch (SQLException ex) {
+          Logger.getLogger(ProduitServices.class.getName()).log(Level.SEVERE, null, ex);
+      }
+     
+  
+  }
+public void UpdateProduit(Produit produit, Integer idProduit) 
+    {
+      
+        String req = "UPDATE produit SET quantite=? ,confirmation=1 where idProduit=? ";
+        try {
+            PreparedStatement pre = con.prepareStatement(req);
+           
+              pre.setInt(1,produit.getQuantite());
+          pre.setInt(2,idProduit);
+            int i = pre.executeUpdate();
+            if (i==1) { 
+                System.out.println("SUCCES");
+            }
+         
+        
+      
+        } catch (Exception e) {
+            e.printStackTrace();
+             System.out.println("Erreur");
+        }
+    }
+    
+   
+   
 }

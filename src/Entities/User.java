@@ -45,7 +45,18 @@ public class User {
     private String ville;
     
     private String tel;
+    private String salt;
+    int point;
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    
     public String getTel() {
         return tel;
     }
@@ -53,6 +64,8 @@ public class User {
     public void setTel(String tel) {
         this.tel = tel;
     }
+
+   
   
     private Integer age;
    
@@ -61,6 +74,38 @@ public class User {
     private Integer idQuiz;
 
     public User() {
+    }
+    
+     public User(User u) {
+        this.id = u.id;
+        this.username = u.username;
+        this.image= u.image;
+        this.age = u.age ; 
+        this.etat=u.etat;
+        this.sexe=u.sexe;
+        this.tel=u.tel;
+        this.point=u.point;
+    }
+    public User(int id, String username,String image, int age , String etat,String sexe) {
+        this.id = id;
+        this.username = username;
+        this.image= image;
+        this.age = age ; 
+        this.etat=etat;
+        this.sexe=sexe;
+    }
+    
+   public User(int id, String username, String image) {
+        this.id = id;
+        this.username = username;
+        this.image = image;
+    }
+   
+     public User(int id, String username , String sexe , String image) {
+        this.id = id;
+        this.username = username;
+        this.sexe = sexe ; 
+        this.image = image ; 
     }
 
     public User(Integer id) {
@@ -81,7 +126,25 @@ public class User {
         this.mdp=mdp;
     }
     
+    private static User instance;
+  
+    public static User getInstance(){
+        if (instance == null)
+            instance = new User();
+        
+    return instance;
+    }
+
+  
     
+    public static void setInstance(User user){
+    instance = new User(user);
+    }
+    
+    public  void sedeconnecter(){
+    instance=null;
+    }
+
     
      public User(String email,String username,String pays,String ville,int age,String profession,String sexe) {
         
@@ -96,7 +159,7 @@ public class User {
      
     }
      
-      public User(String nom,String prenom,String username,Date date,String email ,String tel,String etat,String sexe,int age) {
+      public User(String nom,String prenom,String username,Date date,String email ,String tel,String etat,String sexe,int age,String image ) {
         
        this.nom=nom;
        this.prenom=prenom;
@@ -107,9 +170,19 @@ public class User {
         this.username=username;
         this.sexe=sexe;
         this.age=age;
+        this.image=image;
      
     }
 
+      
+       public int getPoint() {
+        return point;
+    }
+
+    public void setPoint(int point) {
+        this.point = point;
+    }
+      
     public Integer getId() {
         return id;
     }
@@ -281,7 +354,7 @@ public class User {
  
     @Override
     public String toString() {
-        return "Entities.User[ id=" + id + " ]";
+        return "Entities.User[ id=" + username + " ]";
     }
     
 }

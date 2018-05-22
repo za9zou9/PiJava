@@ -1,0 +1,70 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+    .root{
+        -fx-background-color: #ff00cc;
+}
+
+.table-view{
+   -fx-background-color: #ff00cc;
+}
+
+.table-view:focused{
+    -fx-background-image: url(../images/wide-scene-wedding-background-21267527.jpg);
+}
+
+
+.table-view .column-header-background{
+    -fx-background-image: url(../images/cool-heart-background-17780-18239-hd-wallpapers.jpg);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-image: url(../images/03.png);
+ 
+}
+
+
+
+.table-row-cell:selected {
+    -fx-background-color: #123;
+    
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+    .rendu{
+         -fx-background-image:url("../images/bg-1.jpg");
+
+    }
+    
+    
+
+
+}
+}

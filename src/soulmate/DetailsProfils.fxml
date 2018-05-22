@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="604.0" prefWidth="810.0" style="-fx-background-color: #5b031e;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soulmate.DetailsProfilsController">
+   <children>
+      <ImageView fitHeight="604.0" fitWidth="884.0">
+         <image>
+            <Image url="@01.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="username" layoutX="438.0" layoutY="43.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imagePack" fitHeight="243.0" fitWidth="262.0" layoutX="622.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fill="#ae9e9e" layoutX="388.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Informations">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Label fx:id="age" layoutX="511.0" layoutY="214.0" text="age" />
+      <Label fx:id="sexe" layoutX="507.0" layoutY="282.0" text="Label" />
+      <Label fx:id="etat" layoutX="507.0" layoutY="359.0" text="Label" />
+      <Button fx:id="AjouterMesAmis" layoutX="320.0" layoutY="480.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="43.0" prefWidth="118.0" text="Ajouter" />
+      <Text fill="#03155e" layoutX="349.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age">
+         <font>
+            <Font name="Franklin Gothic Book" size="29.0" />
+         </font></Text>
+      <Text fill="#03155e" layoutX="342.0" layoutY="301.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexe">
+         <font>
+            <Font name="Franklin Gothic Book" size="29.0" />
+         </font></Text>
+      <Text fill="#03155e" layoutX="338.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Etat" wrappingWidth="99.30859375">
+         <font>
+            <Font name="Franklin Gothic Book" size="29.0" />
+         </font></Text>
+      <Button fx:id="chat" layoutX="499.0" layoutY="480.0" mnemonicParsing="false" onAction="#chat" prefHeight="43.0" prefWidth="118.0" text="Chat" />
+      <ImageView fitHeight="54.0" fitWidth="59.0" layoutX="275.0" layoutY="144.0">
+         <image>
+            <Image url="@../../../../../Desktop/Nouveau%20dossier/480px-Info_icon_002.svg.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="acceuil" fitHeight="150.0" fitWidth="200.0" layoutX="24.0" layoutY="43.0" onMouseClicked="#acceuilapp" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@617B6clhJpL.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

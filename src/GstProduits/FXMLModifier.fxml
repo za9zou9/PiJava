@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="601.0" prefWidth="759.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLModifierController">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="601.0" prefWidth="759.0" style="-fx-background-color: #7b94ab;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GstProduits.FXMLModifierController">
    <children>
       <JFXTextField fx:id="nom" layoutX="51.0" layoutY="108.0" promptText="nom" />
       <JFXTextField fx:id="region" layoutX="51.0" layoutY="301.0" promptText="région" />
@@ -19,7 +19,7 @@
       <Button fx:id="choix" layoutX="547.0" layoutY="424.0" mnemonicParsing="false" onAction="#choisir" text="Choisir Image" />
       <Button fx:id="valider" layoutX="304.0" layoutY="519.0" mnemonicParsing="false" onAction="#modifier" prefHeight="36.0" prefWidth="217.0" text="Valider" />
       <TextArea fx:id="description" layoutX="51.0" layoutY="161.0" prefHeight="107.0" prefWidth="330.0" promptText="description" />
-      <Label layoutX="271.0" layoutY="28.0" text="Modification" textFill="#0b509a">
+      <Label layoutX="271.0" layoutY="28.0" text="Modification" textFill="#1e8677">
          <font>
             <Font name="System Bold" size="36.0" />
          </font>

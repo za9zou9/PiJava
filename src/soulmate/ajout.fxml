@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: a40404;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soulmate.AjoutController">
+   <children>
+      <ComboBox fx:id="Fl" layoutX="433.0" layoutY="400.0" prefWidth="150.0" />
+      <ImageView fitHeight="600.0" fitWidth="1000.0" layoutY="2.0">
+         <image>
+            <Image url="@../images/wide-scene-wedding-background-21267527.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="prix" layoutX="430.0" layoutY="295.0" />
+      <Label layoutX="283.0" layoutY="291.0" prefHeight="26.0" prefWidth="59.0" text="Prix:" textFill="#171717">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="441.0" prefHeight="32.0" prefWidth="82.0" text="Image:" textFill="#222121">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="383.0" layoutY="205.0" prefHeight="49.0" prefWidth="310.0" text="Ajout d'un pack:" textAlignment="CENTER" textFill="#282626">
+         <font>
+            <Font name="System Bold Italic" size="33.0" />
+         </font>
+      </Label>
+      <Button fx:id="ajoutpack" layoutX="426.0" layoutY="541.0" mnemonicParsing="false" onAction="#AjoutP" prefHeight="45.0" prefWidth="149.0" text="Ajouter">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="choixI" layoutX="427.0" layoutY="441.0" mnemonicParsing="false" onAction="#choisir" prefHeight="45.0" prefWidth="161.0" text="Choisir image" />
+      <FontAwesomeIconView fx:id="home" fill="#b91515" glyphName="HOME" layoutX="852.0" layoutY="528.0" onMouseClicked="#homer" size="60" />
+      <ImageView fx:id="imageV" fitHeight="150.0" fitWidth="200.0" layoutX="47.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
+      <ComboBox fx:id="Mu" layoutX="430.0" layoutY="365.0" onAction="#music" prefWidth="150.0" />
+      <ComboBox fx:id="S" layoutX="195.0" layoutY="365.0" prefWidth="150.0" />
+      <ComboBox fx:id="Fl" layoutX="654.0" layoutY="365.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

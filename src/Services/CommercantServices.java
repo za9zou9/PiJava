@@ -81,6 +81,8 @@ public class CommercantServices {
              
 
              }
+             
+             
             
 
         } catch (SQLException ex) {
@@ -88,6 +90,10 @@ public class CommercantServices {
         }
         return c;
     }
+    
+    
+    
+    
     
     
     public void insertCommercant(Commercant e) throws SQLException

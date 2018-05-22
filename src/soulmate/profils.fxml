@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="ancho" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soulmate.ProfilsController">
+   <children>
+      <ImageView fitHeight="687.0" fitWidth="991.0" layoutX="5.0" layoutY="2.0">
+         <image>
+            <Image url="@../images/wide-scene-wedding-background-21267527.jpg" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="scrol" layoutX="1.0" layoutY="139.0" prefHeight="460.0" prefWidth="1000.0">
+         <content>
+            <VBox fx:id="vb" prefWidth="993.0">
+               <padding>
+                  <Insets left="310.0" />
+               </padding></VBox>
+         </content>
+      </ScrollPane>
+      <ImageView fx:id="acceuil" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" onMouseClicked="#acceuilapp" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@617B6clhJpL.png" />
+         </image>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets left="560.0" />
+   </padding>
+</AnchorPane>

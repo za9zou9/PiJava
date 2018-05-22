@@ -5,6 +5,7 @@
  */
 package EventsUsers;
 
+import Entities.Commercant;
 import Entities.Evenement;
 import Entities.Partcipation;
 import Entities.User;
@@ -86,6 +87,7 @@ public class FXMListeDesEventsController implements Initializable {
                        dc.setLieu(e.getLieu());
                        dc.setId(e.getIdEvenement());
                         boolean trouv=false;
+                        User UserCo=User.getInstance();
         Partcipation pr=new Partcipation();
         ParticipationService parts=new ParticipationService(); 
       List<Partcipation> liste=parts.selectParticipants(e.getIdEvenement());
@@ -97,7 +99,7 @@ public class FXMListeDesEventsController implements Initializable {
      
         for(int i=0;i<liste.size();i++){
             
-            if (liste.get(i).getId()==6) {pr=liste.get(i); trouv=true;}
+            if (liste.get(i).getId()==UserCo.getId()) {pr=liste.get(i); trouv=true;}
         }
         if (trouv==true)    dc.participer.setDisable(true);
         else dc.annuler.setDisable(true);
@@ -149,7 +151,7 @@ UserServices us=new UserServices();
   List<Partcipation> liste=(ArrayList<Partcipation>) se.selectParticipants(idE); 
  List<Integer> lstUsersIDS=new ArrayList<Integer>(); 
         for(int i=0;i<liste.size();i++){lstUsersIDS.add(liste.get(i).getId());} 
-      lstUsersIDS.forEach(System.out::println);
+      
         List<User> lstUsers=us.selectUserById(lstUsersIDS);
         ObservableList<User> listU=FXCollections.observableArrayList(lstUsers);
        

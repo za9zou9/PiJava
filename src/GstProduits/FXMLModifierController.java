@@ -5,6 +5,7 @@
  */
 package GstProduits;
 
+import Entities.Commercant;
 import Entities.Produit;
 import EventsUsers.FXMLDetailsEventController;
 import Services.ProduitServices;
@@ -35,7 +36,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javax.imageio.ImageIO;
 
 /**
@@ -75,6 +78,15 @@ private String url;
     @FXML
     private TextArea description;
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    
     public JFXTextField getNom() {
         return nom;
     }
@@ -153,9 +165,10 @@ private String url;
     }
 
     @FXML
-    private void modifier(ActionEvent event) throws SQLException {
+    private void modifier(ActionEvent event) throws SQLException, IOException {
           Produit p= new Produit();
         ProduitServices ps=new ProduitServices();
+         Commercant commm=Commercant.getInstance();
         
          if ((description.getText().equals(""))||(nom.getText().equals(""))||(url==null)||(quantite.getText().equals(""))||(prix.getText().equals(""))||(type.getText().equals(""))||(region.getText().equals("")))
     {Alert a = new Alert(Alert.AlertType.ERROR);
@@ -165,13 +178,13 @@ private String url;
  a.showAndWait();}
          
          else{
-        p.setConfirmation(false);
+        p.setConfirmation(0);
         p.setDescription(description.getText());
         p.setImage(url);
         p.setNom(nom.getText());
         p.setRegion(region.getText());
         p.setType(type.getText());
-       p.setIdCommercant(1);
+       p.setIdCommercant(commm.getIdCommercant());
        try
 {
      int var = Integer.parseInt(quantite.getText());
@@ -184,23 +197,16 @@ private String url;
                 a1.setHeaderText(null);
                 a1.setContentText("Produit créé avec succès");
  a1.showAndWait();
+ 
 }catch(NumberFormatException  e)
 {Alert a2 = new Alert(Alert.AlertType.ERROR);
                 a2.setTitle("Erreur");
                 a2.setHeaderText(null);
                 a2.setContentText("Champ doit prendre un nombre");
- a2.showAndWait();
-    }
+ a2.showAndWait();}
         
         
-       
-        
-        
-        
-       
-        
-       
-    } 
+      } 
    
     }
     

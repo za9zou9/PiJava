@@ -62,6 +62,31 @@ public class UserServices {
           u.setId(rs.getInt("id"));
           u.setUsername(rs.getString("username"));
           u.setPassword(rs.getString("mdp"));
+          u.setPoint(rs.getInt("point"));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(EvenementServices.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return u;
+       
+        }   
+    
+    
+     public User selectUsersAllForLogin2(String pseudo)
+    { String req="Select * from user where username='" + pseudo + "'";
+      User u=new User();
+        try {
+            st=con.createStatement();
+            rs=st.executeQuery(req);
+            while(rs.next())
+            {
+          u.setId(rs.getInt("id"));
+          u.setUsername(rs.getString("username"));
+         u.setSalt(rs.getString("salt"));
+          u.setPoint(rs.getInt("point"));
+          u.setPassword(rs.getString("password"));
             }
             
         } catch (SQLException ex) {
@@ -85,7 +110,7 @@ public class UserServices {
            
             while(rs.next())
             {
-           User u=new User(rs.getString("nom"),rs.getString("prenom"),rs.getString("username"),rs.getDate("dateDeNaissance"),rs.getString("email"),rs.getString("tel"),rs.getString("etat"),rs.getString("sexe"),rs.getInt("age"));
+           User u=new User(rs.getString("nom"),rs.getString("prenom"),rs.getString("username"),rs.getDate("dateDeNaissance"),rs.getString("email"),rs.getString("tel"),rs.getString("etat"),rs.getString("sexe"),rs.getInt("age"),rs.getString("image"));
            list.add(u);
             }
             

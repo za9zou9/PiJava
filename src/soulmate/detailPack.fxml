@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="soulmate.DetailPackController">
+   <children>
+      <ImageView fitHeight="388.0" fitWidth="1063.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@01.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="399.0" fitWidth="1063.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@01.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="prix" layoutX="278.0" layoutY="120.0" text="Label" textAlignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgview" fitHeight="226.0" fitWidth="276.0" layoutX="583.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="prix1" layoutX="248.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix" textAlignment="CENTER" wrappingWidth="97.13671875">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="229.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produits associés">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Label fx:id="salle" layoutX="172.0" layoutY="228.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="musique" layoutX="381.0" layoutY="228.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="fleurs" layoutX="277.0" layoutY="273.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Label fx:id="id" layoutX="195.0" layoutY="318.0" text="Label" visible="false" />
+      <Button fx:id="AjouterMesPack" layoutX="209.0" layoutY="371.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="50.0" prefWidth="193.0" text="Ajouter" textFill="#970404">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font></Button>
+      <ImageView fx:id="accueil" fitHeight="111.0" fitWidth="115.0" layoutX="683.0" layoutY="436.0" onMouseClicked="#accueil" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@617B6clhJpL.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

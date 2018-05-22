@@ -7,24 +7,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="EventsUsers.FXMLInterfaceAcceuilController">
+<AnchorPane id="AnchorPane" fx:id="ancho" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EventsUsers.FXMLInterfaceAcceuilController">
    <children>
       <ImageView fitHeight="674.0" fitWidth="1201.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Evenements.jpg" />
          </image>
       </ImageView>
-      <JFXButton fx:id="prochain" layoutX="526.0" layoutY="123.0" onAction="#next" prefHeight="25.0" prefWidth="377.0" text="Prochains Evénements" textFill="#5b0f56" underline="true">
+      <JFXButton fx:id="prochain" layoutX="505.0" layoutY="387.0" onAction="#next" prefHeight="25.0" prefWidth="377.0" text="Prochains Evénements" textFill="#ebe5eb" underline="true">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="prec" layoutX="122.0" layoutY="123.0" onAction="#past" text="Evénments Passés" textFill="#5b0f56" underline="true">
+      <JFXButton fx:id="prec" layoutX="84.0" layoutY="217.0" onAction="#past" text="Evénements Passés" textFill="#ebe5eb" underline="true">
          <font>
             <Font name="System Bold" size="30.0" />
          </font>
       </JFXButton>
-      <FontAwesomeIconView glyphName="CHEVRON_CIRCLE_LEFT" layoutX="50.0" layoutY="72.0" size="40" />
+      <FontAwesomeIconView fx:id="home" fill="#b91515" glyphName="HOME" layoutX="903.0" layoutY="610.0" onMouseClicked="#homer" size="70" />
    </children>
 </AnchorPane>

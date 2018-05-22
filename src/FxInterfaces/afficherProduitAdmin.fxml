@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="760.0" prefWidth="1360.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AfficherProduitAdminController">
+    <stylesheets>
+        <URL value="@afficherproduitadmin.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutX="1.0" prefHeight="760.0" prefWidth="206.0" style="-fx-background-color: #2A3F54;">
+         <children>
+            <Label fx:id="acceuil" onMouseClicked="#retour" prefHeight="43.0" prefWidth="120.0" styleClass="menu_item" text="Acceuil" textFill="#837f7f">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="produits" prefHeight="43.0" prefWidth="120.0" text="Produits" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherProduits" prefHeight="49.0" prefWidth="182.0" text="Afficher Produits" textFill="#4f86dd">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ajouterProduits" prefHeight="49.0" prefWidth="177.0" styleClass="menu_item" text="Ajouter Produits" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="confirmerProduit" prefHeight="49.0" prefWidth="196.0" styleClass="menu_item" text="Confirmer Produits" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="packs" prefHeight="43.0" prefWidth="120.0" text="Packs" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherPacks" prefHeight="49.0" prefWidth="182.0" styleClass="menu_item" text="Afficher Packs" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="ajouterPacks" prefHeight="49.0" prefWidth="177.0" styleClass="menu_item" text="Ajouter Packs" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="acceuil111" prefHeight="54.0" prefWidth="175.0" text="Evenements" textFill="#4f86dd">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="30.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="afficherEvenements" prefHeight="49.0" prefWidth="207.0" styleClass="menu_item" text="Afficher Evenements" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+            <Label fx:id="AjouterEvenements" prefHeight="49.0" prefWidth="206.0" styleClass="menu_item" text="Ajouter Evenements" textFill="#837f7f">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="11.0" left="25.0" top="11.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <TableView fx:id="catalogue" layoutX="307.0" layoutY="101.0" prefHeight="533.0" prefWidth="723.0">
+        <columns>
+          <TableColumn fx:id="image" prefWidth="161.0" text="image" />
+          <TableColumn fx:id="nom" prefWidth="135.0" text="nom" />
+            <TableColumn fx:id="prix" prefWidth="90.0" text="prix" />
+            <TableColumn fx:id="description" prefWidth="150.0" text="description" />
+            <TableColumn fx:id="quantite" prefWidth="186.0" text="quantite" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

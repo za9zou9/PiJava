@@ -9,6 +9,7 @@ import Entities.Partcipation;
 import Entities.User;
 import GstEvenements.FXMLAjoutController;
 import GstProduits.NewFXMainProduits;
+import GstUtilisateurs.FXMLoginController;
 import Services.ParticipationService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
@@ -156,8 +157,10 @@ ParticipationService parts=new ParticipationService();
 
     @FXML
     private void participation(ActionEvent event) throws SQLException {
-        ParticipationService part=new ParticipationService();
-        part.insertParticipation(6, id);
+        User ussr=User.getInstance();
+            
+            ParticipationService part=new ParticipationService();
+        part.insertParticipation(ussr.getId(), id);
          Alert a1 = new Alert(Alert.AlertType.INFORMATION);
                 a1.setTitle("Message");
                 a1.setHeaderText(null);
@@ -165,6 +168,10 @@ ParticipationService parts=new ParticipationService();
  a1.showAndWait();
          participer.setDisable(true);
          annuler.setDisable(false);
+        
+            
+        
+        
         
          
     }
@@ -185,13 +192,19 @@ ParticipationService parts=new ParticipationService();
     }
     
     public int supp(){
-        Partcipation pr=new Partcipation();
-        ParticipationService part=new ParticipationService();
+         Partcipation pr=new Partcipation();
+        
+          User ussr=User.getInstance();
+            
+            ParticipationService part=new ParticipationService();
         List<Partcipation> liste=part.selectParticipants(id);
         for(int i=0;i<liste.size();i++){
-            if (liste.get(i).getId()==6) pr=liste.get(i);
+            if (liste.get(i).getId()==ussr.getId()) pr=liste.get(i);
         }
-return pr.getReponse();
+        
+         
+        
+    return pr.getReponse();
 
     }
 

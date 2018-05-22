@@ -5,8 +5,7 @@
  */
 package GstEvenements;
 
-import com.teknikindustries.bulksms.SMS;
-import Entities.Evenement;
+
 import Entities.Partcipation;
 import Entities.User;
 import EventsUsers.FXMLDetailsEventController;
@@ -15,6 +14,7 @@ import Services.ParticipationService;
 import Services.UserServices;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -46,6 +46,14 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javax.imageio.ImageIO;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+
 
 /**
  * FXML Controller class
@@ -54,6 +62,11 @@ import javax.imageio.ImageIO;
  */
 public class FXMLModifierController implements Initializable {
     private int id;
+    
+    public static final String ACCOUNT_SID = "AC6aad8a0d0849dc11c01625b0574f7263";
+    public static final String AUTH_TOKEN = "8d2943c240f49b604475ab8ca270378c";
+    @FXML
+    private FontAwesomeIconView home;
 
     public int getId() {
         return id;
@@ -152,7 +165,8 @@ public class FXMLModifierController implements Initializable {
       ParticipationService see=new ParticipationService();
 UserServices us=new UserServices();   
     EvenementServices se=new EvenementServices();
-    SMS msg=new SMS();
+   
+   
     
    if ((date.getValue()==null)||(description.getText().equals(""))||(lieu.getText().equals(""))||(url==null))
     {Alert a = new Alert(Alert.AlertType.ERROR);
@@ -163,7 +177,17 @@ UserServices us=new UserServices();
    else{
      Date dates=Date.valueOf(date.getValue());
 
-    
+    List<Partcipation> liste=(ArrayList<Partcipation>) see.selectParticipants(id);
+ List<Integer> lstUsersIDS=new ArrayList<Integer>(); 
+        for(int i=0;i<liste.size();i++){lstUsersIDS.add(liste.get(i).getId());} 
+        List<User> lstUsers=us.selectUserById(lstUsersIDS);
+ for(int j=0;j<lstUsers.size();j++){
+  
+ 
+   Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        Message msg = Message.creator(new PhoneNumber("+216"+lstUsers.get(j).getTel()), new PhoneNumber("+19712056031"), "Nous vous informons que l'événement auquel vous participez qui a lieu a "+lieu.getText()+" a été modifié !! Consulter MySoulmate pour vérifier ").create();
+   
+ }
     
     se.UpdateEvenement(id, dates, lieu.getText(), description.getText(), url);
      Alert a1 = new Alert(Alert.AlertType.INFORMATION);
@@ -174,14 +198,7 @@ UserServices us=new UserServices();
  
  
  
- List<Partcipation> liste=(ArrayList<Partcipation>) see.selectParticipants(id);
- List<Integer> lstUsersIDS=new ArrayList<Integer>(); 
-        for(int i=0;i<liste.size();i++){lstUsersIDS.add(liste.get(i).getId());} 
-        List<User> lstUsers=us.selectUserById(lstUsersIDS);
- for(int j=0;j<lstUsers.size();j++){
-   msg.SendSMS("skan", "skanskan", "Nous vous informons que l'événement auquel vous participez qui a lieu le "+dates+" a été modifié !! Consulter MySoulmate pour vérifier ", "216"+lstUsers.get(j).getTel(), "https://bulksms.vsms.net/eapi/submission/send_sms/2/2.0");
  
- }
  NewFXMain n=new NewFXMain();
                   Stage stage=new Stage();
                   
@@ -243,5 +260,17 @@ private void openFile(File file) {
             Logger.getLogger(FXMLDetailsEventController.class.getName()).log(Level.SEVERE, null, io);
         }
     }    
+
+    @FXML
+    private void homer(MouseEvent event) throws IOException {
+          Stage stage = (Stage) home.getScene().getWindow();
+            stage.close();
+        AnchorPane parentContent= FXMLLoader.load(getClass().getResource("/FxInterfaces/backoffice.fxml"));
+                    
+              Scene scene = new Scene(parentContent); 
+              stage.setScene(scene);
+              stage.sizeToScene();
+              stage.show();
+    }
 }
 

@@ -6,6 +6,7 @@
 package GstProduits;
 
 import Entities.Commande;
+import Entities.Commercant;
 import Entities.Produit;
 import EventsUsers.FXMListeDesEventsController;
 import Services.CommandeServices;
@@ -29,6 +30,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Pagination;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -65,8 +67,13 @@ ProduitServices PrS=new ProduitServices();
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        if (TestToAvoidException()==false){Alert a = new Alert(Alert.AlertType.ERROR);
+                a.setTitle("Erreur");
+                a.setHeaderText(null);
+                a.setContentText("Vous n'avez pas encore de produits");
+ a.showAndWait();}
        
+        else{
         
      pss=StatQteMaxProduit();  
       int x=StatQteMaxQte();   
@@ -112,7 +119,7 @@ ProduitServices PrS=new ProduitServices();
    chart2.getData().addAll(series2,series4);
     
    
-    
+        }
     
     
     }    
@@ -123,11 +130,12 @@ ProduitServices PrS=new ProduitServices();
     
     public Produit StatQteMaxProduit(){
     int max=0; int var=0;
+     Commercant commm=Commercant.getInstance();
          Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){
      
@@ -146,11 +154,12 @@ ProduitServices PrS=new ProduitServices();
     
     public int StatQteMaxQte(){
     int max=0; int var=0;
+     Commercant commm=Commercant.getInstance();
          Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){
      
@@ -169,11 +178,12 @@ ProduitServices PrS=new ProduitServices();
     
     public Produit StatMaxVenduProduit(){
      int max=0; int var=0;
+      Commercant commm=Commercant.getInstance();
          Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){
      
@@ -192,11 +202,12 @@ ProduitServices PrS=new ProduitServices();
     
     public Float StatMaxVenduGain(){
      float max2=0; int var2=0;
+      Commercant commm=Commercant.getInstance();
          Produit pInterm2 = new Produit();
          CommandeServices com2=new CommandeServices();
          ProduitServices s2=new ProduitServices();
   List<Commande> liste2= com2.selectCommandesAll();
-   List<Produit> listeProduits2= s2.selectProduitsConfirmes(1);
+   List<Produit> listeProduits2= s2.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits2.size();i++){
      
@@ -225,11 +236,12 @@ ProduitServices PrS=new ProduitServices();
     public int StatQteMinQte(){
     TreeMap<Integer,Integer> treemap = new TreeMap<Integer, Integer>();
     int min=0; int theId=0;
+     Commercant commm=Commercant.getInstance();
    Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){treemap.put(listeProduits.get(i).getIdProduit(), 0);}
  
@@ -258,11 +270,12 @@ ProduitServices PrS=new ProduitServices();
     public Produit StatQteMinProduit(){
      TreeMap<Integer,Integer> treemap = new TreeMap<Integer, Integer>();
     int min=0; int theId=0;
+     Commercant commm=Commercant.getInstance();
    Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){treemap.put(listeProduits.get(i).getIdProduit(), 0);}
  
@@ -294,13 +307,13 @@ ProduitServices PrS=new ProduitServices();
     public Produit StatGainMinProduit(){
 
  TreeMap<Integer,Integer> treemap = new TreeMap<Integer, Integer>();
- 
+  Commercant commm=Commercant.getInstance();
     int min=0; int theId=0;
    Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){treemap.put(listeProduits.get(i).getIdProduit(), 0);}
  
@@ -337,13 +350,13 @@ theId=treemap.firstKey();
     public float StatGainMinGain(){
 
  TreeMap<Integer,Integer> treemap = new TreeMap<Integer, Integer>();
- 
+  Commercant commm=Commercant.getInstance();
     float min=0; int theId=0;
    Produit pInterm = new Produit();
          CommandeServices com=new CommandeServices();
          ProduitServices s=new ProduitServices();
   List<Commande> liste= com.selectCommandesAll();
-   List<Produit> listeProduits= s.selectProduitsConfirmes(1);
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
   
  for(int i=0;i<listeProduits.size();i++){treemap.put(listeProduits.get(i).getIdProduit(), 0);}
  
@@ -375,7 +388,27 @@ theId=treemap.firstKey();
 }
     
     
+    public boolean TestToAvoidException(){
+   boolean test=false;
+     Commercant commm=Commercant.getInstance();
+         Produit pInterm = new Produit();
+         CommandeServices com=new CommandeServices();
+         ProduitServices s=new ProduitServices();
+  List<Commande> liste= com.selectCommandesAll();
+   List<Produit> listeProduits= s.selectProduitsConfirmes(commm.getIdCommercant());
+  
+ for(int i=0;i<listeProduits.size();i++){
+     
+      for(int j=0;j<liste.size();j++){
+         
+    if (liste.get(j).getIdProduit()==listeProduits.get(i).getIdProduit())
+        test=true;
+   
+    }
     
+     }
+        return test;
+    }
     
     
     
